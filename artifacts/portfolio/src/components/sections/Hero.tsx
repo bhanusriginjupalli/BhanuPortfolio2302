@@ -3,13 +3,17 @@ import { ArrowRight, BrainCircuit, Code2, Cloud } from 'lucide-react';
 import InteractiveTerminal from '@/components/ui/Terminal';
 import profileImg from '@assets/finalgoodphoto_1785679819175.png';
 
-export default function Hero() {
+interface HeroProps {
+  onOpenAiClone: () => void;
+}
+
+export default function Hero({ onOpenAiClone }: HeroProps) {
   return (
     <section id="about" className="min-h-screen pt-12 md:pt-20 flex items-center">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -17,7 +21,7 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-secondary/30 bg-secondary/10">
               <div className="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
-              <span className="text-xs font-mono text-secondary">Open to AI/ML, SWE & DevOps / Cloud Roles</span>
+              <span className="text-xs font-mono text-secondary">Open to AI/ML, SWE &amp; DevOps / Cloud Roles</span>
             </div>
 
             <div className="space-y-2">
@@ -29,7 +33,7 @@ export default function Hero() {
             </div>
 
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Building scalable distributed systems, robust cloud infrastructure, and intelligent machine learning applications. Versatile Computer Science & AI undergraduate at Amrita Vishwa Vidyapeetham (CGPA 8.35) with a multi-disciplinary background spanning distributed systems, cloud computing, Kubernetes orchestration, Big Data analytics, and state-of-the-art machine learning & computer vision.
+              Building scalable distributed systems, robust cloud infrastructure, and intelligent machine learning applications. Versatile Computer Science &amp; AI undergraduate at Amrita Vishwa Vidyapeetham (CGPA 8.35) with a multi-disciplinary background spanning distributed systems, cloud computing, Kubernetes orchestration, Big Data analytics, and state-of-the-art machine learning &amp; computer vision.
             </p>
 
             <div className="flex flex-wrap gap-3">
@@ -37,10 +41,10 @@ export default function Hero() {
                 <BrainCircuit className="w-4 h-4 text-primary" /> AI / ML Engineer
               </div>
               <div className="px-4 py-2 rounded border border-border bg-card font-mono text-sm flex items-center gap-2 text-foreground/90">
-                <Code2 className="w-4 h-4 text-secondary" /> Software Engineer
+                <Code2 className="w-4 h-4 text-secondary" /> Software Engineer (SWE)
               </div>
               <div className="px-4 py-2 rounded border border-border bg-card font-mono text-sm flex items-center gap-2 text-foreground/90">
-                <Cloud className="w-4 h-4 text-accent" /> DevOps & Cloud
+                <Cloud className="w-4 h-4 text-accent" /> DevOps &amp; Cloud Practitioner
               </div>
             </div>
 
@@ -48,21 +52,20 @@ export default function Hero() {
               <a href="#projects" className="px-6 py-3 rounded bg-primary text-primary-foreground font-mono font-bold flex items-center gap-2 hover:bg-primary/90 transition-colors">
                 Explore Projects <ArrowRight className="w-4 h-4" />
               </a>
-              <button onClick={() => {
-                const term = document.getElementById('about');
-                term?.scrollIntoView({ behavior: 'smooth' });
-                // We could trigger terminal command here if we exposed a ref
-              }} className="px-6 py-3 rounded border border-primary text-primary font-mono hover:bg-primary/10 transition-colors flex items-center gap-2">
-                🤖 Chat With AI Clone
+              <button
+                onClick={onOpenAiClone}
+                className="px-6 py-3 rounded border border-primary text-primary font-mono hover:bg-primary/10 transition-colors flex items-center gap-2"
+              >
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                Chat With AI Clone
               </button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8">
+            <div className="grid grid-cols-3 gap-4 pt-8">
               {[
-                { val: '8.35/10', label: 'CGPA' },
+                { val: '8.35 / 10', label: 'CGPA' },
                 { val: '7+ Major', label: 'Systems Built' },
-                { val: 'SIH Finalist', label: 'Hackathons' },
-                { val: '10+ Pro', label: 'Certifications' }
+                { val: '10+ Pro & Cloud', label: 'Certifications' },
               ].map((stat, i) => (
                 <div key={i} className="p-4 rounded border border-border bg-card/50 flex flex-col gap-1 hover:border-primary/50 transition-colors">
                   <span className="font-mono text-lg font-bold text-foreground">{stat.val}</span>
@@ -81,10 +84,7 @@ export default function Hero() {
             <div className="absolute -top-12 -right-4 w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-primary/50 overflow-hidden z-20 shadow-[0_0_30px_rgba(0,212,255,0.3)] bg-background">
               <img src={profileImg} alt="Bhanu Sri Ginjupalli" className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
             </div>
-            
-            {/* Ambient glow behind terminal */}
             <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-            
             <div className="relative z-10 w-full pt-16 md:pt-8">
               <InteractiveTerminal />
             </div>

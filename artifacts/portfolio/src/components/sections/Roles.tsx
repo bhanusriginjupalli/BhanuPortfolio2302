@@ -27,38 +27,38 @@ const roles = [
 
 const resumes = [
   {
-    label: 'HyperVerge Resume',
-    sub: 'Computer Vision & Deep Learning',
+    label: 'Computer Vision & Deep Learning',
+    sub: 'CV · Object Detection · PyTorch · CUDA',
     file: '/resumes/hyperverge-resume.pdf',
     color: 'text-primary',
   },
   {
-    label: 'Skylark Resume',
-    sub: 'CV & Robotics',
+    label: 'Robotics & Embedded CV',
+    sub: 'Pose Estimation · 6-DoF · UNet · Segmentation',
     file: '/resumes/skylark-resume.pdf',
     color: 'text-primary',
   },
   {
-    label: 'Sigmoid Resume',
-    sub: 'Data Science & ML',
+    label: 'Data Science & ML Research',
+    sub: 'NLP · LLMs · XGBoost · Streamlit · SHAP',
     file: '/resumes/sigmoid-resume.pdf',
     color: 'text-secondary',
   },
   {
-    label: 'Viasat Resume',
-    sub: 'Systems & Cloud',
+    label: 'Systems & Distributed Computing',
+    sub: 'HPC · Distributed Systems · Cloud · APIs',
     file: '/resumes/viasat-resume.pdf',
     color: 'text-secondary',
   },
   {
-    label: 'Fractal Resume',
-    sub: 'Data Analytics & Big Data',
+    label: 'Big Data & Analytics',
+    sub: 'Apache Spark · PySpark · PowerBI · SQL',
     file: '/resumes/fractal-resume.pdf',
     color: 'text-accent',
   },
   {
-    label: 'FinacPlus Resume',
-    sub: 'Cloud & DevOps',
+    label: 'DevOps & Cloud Infrastructure',
+    sub: 'Kubernetes · Terraform · AWS · CI/CD',
     file: '/resumes/finacplus-resume.pdf',
     color: 'text-accent',
   },
@@ -110,7 +110,7 @@ export default function Roles() {
         >
           <div className="mb-8">
             <h4 className="font-mono text-xl font-bold text-foreground mb-1">Tailored Resumes</h4>
-            <p className="text-sm text-muted-foreground">Role-specific resumes — each tailored for a different domain and company fit.</p>
+            <p className="text-sm text-muted-foreground">Role-specific resumes — each tailored for a different domain and stack.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {resumes.map((r, i) => (
@@ -122,8 +122,8 @@ export default function Roles() {
               >
                 <Download className={`w-4 h-4 ${r.color} group-hover:-translate-y-0.5 transition-transform shrink-0`} />
                 <div className="min-w-0">
-                  <div className="font-semibold truncate">{r.label}</div>
-                  <div className="text-[11px] text-muted-foreground truncate">{r.sub}</div>
+                  <div className="font-semibold truncate text-[13px]">{r.label}</div>
+                  <div className="text-[11px] text-muted-foreground truncate mt-0.5">{r.sub}</div>
                 </div>
               </a>
             ))}

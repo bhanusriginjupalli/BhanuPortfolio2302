@@ -35,6 +35,13 @@ const projects = [
     imageAlt: 'Financial data and trading charts',
   },
   {
+    title: 'Epidemiological Modeling & Disease Surveillance System',
+    desc: 'Disease spread simulation using object-oriented programming and advanced data structures — graphs, priority queues, linked lists, and BSTs to model population interactions with infection propagation, recovery, vaccination, and quarantine strategies.',
+    tags: ['Python', 'OOP', 'Graphs', 'BST', 'Priority Queue', 'DSA', 'Simulation'],
+    image: 'https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=600&q=80&auto=format&fit=crop',
+    imageAlt: 'Epidemiology and disease modeling',
+  },
+  {
     title: 'Learning Visual Composition as Structure: CV Framework for Filmography',
     desc: 'CNN + GNN + YOLOv8 framework for modeling visual composition in video frames, graph-based scene representation pipeline.',
     tags: ['YOLOv8', 'GNN', 'CNN', 'PyTorch', 'OpenCV'],

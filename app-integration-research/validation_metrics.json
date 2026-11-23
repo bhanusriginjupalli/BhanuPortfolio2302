@@ -1,0 +1,8 @@
+{
+  "sample_n": 8,
+  "agreement": 8,
+  "mismatches": 0,
+  "agreement_percent": 100,
+  "label_scope": "Broad documented API/auth integration feasibility with caveats",
+  "limitations": "Purposive manual sample, not statistically representative; not live API/credential test; not an executed agent run; not 100-app accuracy."
+}

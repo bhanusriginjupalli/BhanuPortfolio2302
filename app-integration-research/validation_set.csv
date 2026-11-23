@@ -1,0 +1,9 @@
+app,preliminary_prediction,manual_ground_truth,match,primary_source,manual_note
+Salesforce,"Buildable; OAuth + edition limits","Buildable with documented auth/API; caveats",true,https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/api_rest.pdf,"OAuth REST access documented; edition and org policies can gate API access."
+HubSpot,"Buildable; scopes and tier limits","Buildable with documented auth/API; caveats",true,https://developers.hubspot.com/docs/apps/developer-platform/build-apps/integrate-with-the-remote-hubspot-mcp-server,"Official MCP docs; OAuth/PKCE and scopes; tier limits."
+Slack,"Buildable; scopes/admin approval","Buildable with documented auth/API; caveats",true,https://docs.slack.dev/authentication/installing-with-oauth/,"OAuth install and scopes documented; workspace admin may constrain."
+Linear,"Easy win","Buildable with documented auth/API; caveats",true,https://linear.app/developers/oauth-2-0-authentication,"OAuth2 and GraphQL documented; workspace authorization applies."
+Shopify,"Buildable; API policy and scopes","Buildable with documented auth/API; caveats",true,https://shopify.dev/docs/api/usage/authentication,"Auth/token flows and scopes documented; API-specific policy variations."
+Notion,"Easy win","Buildable with documented auth/API; caveats",true,https://developers.notion.com/,"Public API docs and token/OAuth integration paths documented."
+GitHub,"Easy win","Buildable with documented auth/API; caveats",true,https://docs.github.com/en/rest,"REST reference and PAT/OAuth/GitHub App auth documented."
+Stripe,"Buildable; regulated/payment operations","Buildable with documented auth/API; caveats",true,https://stripe.com/docs/api,"API keys documented; Connect OAuth and live-payment onboarding caveats."

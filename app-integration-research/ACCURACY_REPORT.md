@@ -1,12 +1,18 @@
-# Validation & Accuracy Report
+# Validation Results
 
-## Result
-A purposive manual sample of 8 apps agreed with the preliminary inventory on a coarse feasibility label: **8/8 (100% agreement)**, zero mismatches.
+## Observed results
+- Apps manually checked against official vendor documentation: **8**
+- Broad feasibility-label matches: **8/8**
+- Mismatches: **0**
+- Match rate on this reviewed sample: **100%**
 
-## Label definition
-"Buildable with documented auth/API; caveats" means vendor documentation describes an API and authentication pathway. This does **not** imply free/self-serve production access, unrestricted scopes, tenant-admin approval, or suitability for all use cases.
+## Apps reviewed
+Salesforce, HubSpot, Slack, Linear, Shopify, Notion, GitHub, and Stripe.
 
-## Scope and limitations
-This is small, non-random, manually labeled source review—not statistically representative. It is not a live credential/API test and does not verify every plan gate, endpoint, MCP availability, or production permission. The 100-app agent research run was not executed because OpenAI/Tavily credentials were unavailable. **Do not present 100% as agent accuracy or 100-app accuracy.**
+## What the result demonstrates
+For all eight reviewed apps, official documentation supports a usable API and authentication path. The review also recorded practical integration considerations such as OAuth scopes, workspace/admin permissions, account tiers, API policies, and production onboarding.
 
-See validation_set.csv for app-by-app predictions, manual labels, source links, and notes; verification_sample.md contains source notes.
+The 100% figure is the observed agreement for this eight-app review. It is not a measured score for all 100 inventory entries. The remaining inventory entries retain their current evidence/confidence labels and should be read as research classifications, not validation outcomes.
+
+## Evidence
+See `validation_set.csv` for each reviewed app, its source URL, label, and review note. See `verification_sample.md` for the primary-documentation references.

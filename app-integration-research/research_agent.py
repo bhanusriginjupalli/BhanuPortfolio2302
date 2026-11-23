@@ -7,7 +7,6 @@ and flags ambiguous or unsupported results for human review.
 import argparse, csv, json, os, time
 from urllib.parse import urlparse
 import requests
-from openai import OpenAI
 
 SCHEMA={"type":"object","properties":{
 "category":{"type":"string"},"description":{"type":"string"},
@@ -58,6 +57,7 @@ def research(app,client,key):
   record=extract(client,app,hits[:10])
  return validate(record,domain)
 def main():
+    from openai import OpenAI
  parser=argparse.ArgumentParser();parser.add_argument("--input",default="apps.csv");parser.add_argument("--output",default="research.json");parser.add_argument("--limit",type=int,default=100);args=parser.parse_args()
  client=OpenAI();key=os.environ["TAVILY_API_KEY"]
  with open(args.input,encoding="utf-8") as f:apps=list(csv.DictReader(f))[:args.limit]

@@ -1,17 +1,15 @@
 # App Integration Research — Product Ops Case Study
 
-**Live case study:** https://app-integration-research-case-study-wallflower1.vercel.app
+**Live page:** https://app-integration-research-case-study-wallflower1.vercel.app/
 
-This folder contains a lightweight research-agent prototype and the preliminary seed inventory for a 100-app integration feasibility assessment.
+## Deliverables and status
+- Preliminary 100-app inventory across 10 categories.
+- Research pipeline prototype (Tavily search → structured LLM extraction → targeted retry for low-confidence evidence → URL/official-domain checks → review flags/checkpoints).
+- Eight high-level source spot checks, plus a manual validation set.
+- The manual 8-app purposive sample agrees on a broad “documented API/auth path, buildable with caveats” label: **8/8 (100%)**. This is sample agreement only—not a statistically generalizable accuracy estimate, not a live credential/API test, and not 100-app agent accuracy.
+- Agent has **not** run end-to-end because API credentials were unavailable in the execution environment. No claims of full 100-app source verification.
 
-## Status / scope
-- 100-app seed inventory spanning 10 categories.
-- 8 high-level official-doc spot checks.
-- Preliminary classification is **not** a full 100-app evidence audit.
-- Agent prototype is implemented but was not executed end-to-end here (API credentials unavailable in this runtime).
-- No classification accuracy score is claimed. Spot-checks support selected high-level claims only.
-
-## Run locally
+## Run
 Python 3.10+:
 ```bash
 pip install -r requirements.txt
@@ -27,19 +25,20 @@ python research_agent.py --input apps.csv --output research.json
 ```
 
 ## Pipeline
-1. Search public docs for API, auth, access, MCP.
-2. Extract structured fields with evidence links using an LLM.
-3. Repeat targeted search when confidence is low or key access facts are unknown.
-4. Check evidence URLs and whether domains match the vendor's declared official domain.
-5. Flag uncertainty and human review; checkpoint results after each app.
+1. Search official docs for API/auth/access/MCP.
+2. Extract structured fields and claim-level evidence links.
+3. Retry targeted search for low-confidence or unknown facts.
+4. Validate URLs and vendor-domain alignment.
+5. Flag uncertainty for human review and checkpoint results.
 
-HTTP errors (403/429/etc.) may reflect bot blocking; they are not evidence that a claim is false.
+HTTP errors may be bot blocking—not proof a claim is false. Access plans, scopes, tenant/admin approval, production review, regional availability and MCP support can change.
 
-## Deliverables
-- `index.html`: project/case-study landing page (live version hosted on Vercel)
-- `apps.csv`: 100-app input list
+## Contents
+- `apps.csv`: seed inventory
 - `research_agent.py`: pipeline prototype
-- `verification_sample.md`: source spot-check notes
-- `requirements.txt`: dependencies
+- `index.html`: interactive case study source (available in the downloadable package)
+- `verification_sample.md`: source spot checks
+- `ACCURACY_REPORT.md`, `validation_set.csv`, `validation_metrics.json`: validation
+- `test_research_agent.py`: offline validator regression tests
 
-**Limitations:** This version uses Tavily and OpenAI; it does not directly integrate Composio SDK/MCP. API access, plan, permissions, review requirements and MCP support vary by account/product and should be reconfirmed before implementation.
+**Limitations:** prototype uses Tavily + OpenAI, not Composio SDK/MCP; no live API access tests; preliminary verdicts are not launch approval.
